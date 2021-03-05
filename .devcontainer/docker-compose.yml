@@ -13,7 +13,7 @@ services:
       dockerfile: .devcontainer/Dockerfile
     volumes:
       - ..:/workspace:cached
-      - $HOME/.ssh/:/home/vscode/.ssh/ # Mount the ssh folder to authenticate with github
+      - $HOME/.ssh/:/home/ruby/.ssh/ # Mount the ssh folder to authenticate with github
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
