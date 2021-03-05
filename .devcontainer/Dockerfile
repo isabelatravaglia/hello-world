@@ -32,3 +32,6 @@ ENV LANG=C.UTF-8 \
 
 # Install required Bundler version
 RUN gem install bundler:$BUNDLER_VERSION rails:$RAILS_VERSION webdrivers
+
+#Make bash the default shell
+RUN sudo rm /bin/sh && sudo ln -s /bin/bash /bin/sh
