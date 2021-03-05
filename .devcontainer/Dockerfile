@@ -1,4 +1,20 @@
+# https://github.com/isabelatravaglia/rails-base-image
 FROM isabtra/rails-repo:v2
+
+#Install software-properties-common to allow the command apt-add-repository to work
+RUN sudo apt-get update -qq \
+&& sudo apt-get install -yq --no-install-recommends \
+  software-properties-common \
+&& sudo apt-get clean \
+&& sudo rm -rf /var/cache/apt/archives/* \
+&& sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+&& sudo truncate -s 0 /var/log/*log
+
+# Install Git Cli
+RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97541F0 \ 
+&& sudo apt-add-repository https://cli.github.com/packages \
+&& sudo apt update -qq \
+&& sudo apt install -y gh
 
 ARG BUNDLER_VERSION=2.1.4
 ARG RAILS_VERSION=6.1.3
