@@ -2,7 +2,6 @@
 FROM isabtra/rails-repo:v2
 
 #Install software-properties-common to allow the command apt-add-repository to work
-#Install socat to get ssh keys from the host
 RUN sudo apt-get update -qq \
 && sudo apt-get install -yq --no-install-recommends \
   software-properties-common \
@@ -19,8 +18,8 @@ RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11
 && sudo apt install -y gh
 
 # Install zsh
-# RUN sudo apt install -y zsh imagemagick jq \
-# && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+RUN sudo apt install -y zsh imagemagick jq \
+&& sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
 ARG BUNDLER_VERSION=2.1.4
