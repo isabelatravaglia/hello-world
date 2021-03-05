@@ -13,7 +13,11 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"rebornix.Ruby"
+    "ms-vscode.sublime-keybindings",
+    "hridoy.rails-snippets",
+    "dbaeumer.vscode-eslint",
+    "rayhanw.erb-helpers",
+    "misogi.ruby-rubocop"
 	],
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
