@@ -8,6 +8,7 @@
 	
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
+    "workbench.colorTheme": "Night Owl",
 		"terminal.integrated.shell.linux": "/bin/zsh",
     "dotfiles.repository": "isabelatravaglia/dotfiles",
     "dotfiles.targetPath": "~/dotfiles",
@@ -20,7 +21,8 @@
     "hridoy.rails-snippets",
     "dbaeumer.vscode-eslint",
     "rayhanw.erb-helpers",
-    "misogi.ruby-rubocop"
+    "misogi.ruby-rubocop",
+    "sdras.night-owl"
 	],
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
