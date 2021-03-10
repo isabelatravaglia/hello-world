@@ -1,6 +1,5 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.158.0/containers/ruby-rails
-
 {
   "name": "Ruby on Rails",
   "dockerComposeFile": "docker-compose.yml",
@@ -17,14 +16,14 @@
   },
 
   // Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
+  "extensions": [
     "ms-vscode.sublime-keybindings",
     "hridoy.rails-snippets",
     "dbaeumer.vscode-eslint",
     "rayhanw.erb-helpers",
     "misogi.ruby-rubocop",
     "sdras.night-owl"
-	],
+  ],
 	
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [3000, 3001],
