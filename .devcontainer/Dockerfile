@@ -31,4 +31,4 @@ ENV LANG=C.UTF-8 \
   BUNDLE_RETRY=3
 
 # Install required Bundler version
-RUN gem install bundler:$BUNDLER_VERSION rails:$RAILS_VERSION webdrivers
+RUN gem install bundler:$BUNDLER_VERSION rails:$RAILS_VERSION rubocop

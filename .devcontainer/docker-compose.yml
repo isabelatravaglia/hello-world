@@ -2,6 +2,7 @@ version: '3.8'
 
 volumes: 
   postgres_data:
+  bundle:
 
 services:
   app:
@@ -14,12 +15,22 @@ services:
     volumes:
       - ..:/workspace:cached
       - $HOME/.ssh/:/home/ruby/.ssh/ # Mount the ssh folder to authenticate with github
+      - bundle:/usr/local/bundle
+    environment:
+      HUB_URL: http://chrome:4444/wd/hub
+      # SELENIUM_HOST: selenium
+      # SELENIUM_PORT: 4444
+      # SELENIUM_HOST: selenium
+      # SELENIUM_PORT: 4444
+      # TEST_APP_HOST: web
+      # TEST_PORT: 3001
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
 
-    links: 
+    depends_on: 
       - db
+      - chrome
 
   db:
     image: postgres
@@ -30,3 +41,11 @@ services:
       - 5432:5432
     environment:
       POSTGRES_PASSWORD: postgres
+      
+  chrome:
+    image: selenium/standalone-chrome-debug
+    ports:
+      - 4444:4444
+      - 5900:5900
+    volumes:
+      - /dev/shm:/dev/shm
